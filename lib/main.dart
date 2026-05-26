@@ -55,7 +55,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   String _input = '';
   String _display = '0';
-  String _hiddenPhrase = 'ME DA UM BEIJO';
+  String _hiddenPhrase = 'Magica';
   bool _showingPhrase = false;
   DateTime _lastShake = DateTime.fromMillisecondsSinceEpoch(0);
 
@@ -69,14 +69,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Future<void> _loadPhrase() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _hiddenPhrase = prefs.getString(_phraseKey) ?? 'ME DA UM BEIJO';
+      _hiddenPhrase = prefs.getString(_phraseKey) ?? 'Magica';
     });
   }
 
   Future<void> _savePhrase(String phrase) async {
     final prefs = await SharedPreferences.getInstance();
 
-    final value = phrase.trim().isEmpty ? 'ME DA UM BEIJO' : phrase.trim();
+    final value = phrase.trim().isEmpty ? 'Magica' : phrase.trim();
 
     await prefs.setString(_phraseKey, value);
 
@@ -426,7 +426,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: const Color(0xFF2C2C2E),
-                  labelText: 'Ex: ME DA UM BEIJO',
+                  labelText: 'Ex: Magica',
                   labelStyle: const TextStyle(color: Color(0xFFBDBDBD)),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
